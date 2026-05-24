@@ -7,5 +7,167 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+}
 
+.game-container {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px;
+}
+
+.ui {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+#game-area {
+    width: 800px;
+    height: 400px;
+    background: linear-gradient(to bottom, #5c94FC 80%, #228822 80%, #22BB22 100%);
+    border: 2px solid #333;
+    overflow: hidden;
+    position: relative;
+}
+
+#mario {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    /* Use a colored square as placeholder until you get a proper image */
+    /* background-color: wheat; */
+    /* Or fix the image URL to direct link: */
+    background-image: url("./mario.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 100;
+    /* Add initial position */
+    bottom: 80px;
+    left: 50px;
+}
+
+#mario-big {
+    width: 40px;
+    height: 40px;
+    background-image: url("./mario.png");
+}
+
+.platform {
+    background-image: url("./obstacle.png");
+}
+
+.platform.ground {
+    width: 20px;
+    height: 20px;
+    background-image: url('./ground.png');
+}
+
+.platform.blue {
+    width: 20px;
+    height: 20px;
+    background-image: url('./ground-blue.png');
+}
+
+.enemy {
+    width: 20px;
+    height: 20px;
+    background-image: url('./enemy.png');
+}
+
+.enemy.purpule {
+    width: 20px;
+    height: 20px;
+    background-image: url('./enemy-purpule.png');
+}
+
+.coin {
+    width: 20px;
+    height: 20px;
+    background-image: url('./coin.png');
+    animation: coinSpin 1s linear infinite;
+}
+
+@keyframes coinSpin {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotate(360%);
+    }
+}
+
+.surprise-block {
+    width: 20px;
+    height: 20px;
+    background-image: url('./block.png')
+}
+
+.surprise-block.hit {
+    width: 20px;
+    height: 20px;
+    background-image: url('./block-hit.png')
+}
+
+.pip {
+    width: 40px;
+    height: 40px;
+}
+
+.pipe-top {
+    width: 20px;
+    height: 20px;
+    background-image: url('pipe-top.png');
+}
+
+.pipe-top-right {
+    width: 20px;
+    height: 20px;
+    background-image: url('pipe-right.png');
+}
+
+.pipe-bottom {
+    width: 20px;
+    height: 20px;
+    background-image: url('./pipe-bottom.png');
+}
+
+.pipe-bottom-right {
+    width: 20px;
+    height: 20px;
+    background-image: url('./pipe-bottom-right.png');
+}
+
+.controls {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    border: 3px solid white;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 100;
+}
+
+#restart-button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#restart-button:hover {
+    background-color: #ff5252;
 }
