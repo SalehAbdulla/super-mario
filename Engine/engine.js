@@ -10,6 +10,9 @@ let lastFrameTime = 0;
 export let deltaTime = 0;
 
 const perfMonitor = new PerformanceMonitor();
+let levelData = new LevelData();
+let mainCamera = new Camera({x:0, y:0});
+
 
 function gameLoop(timestamp){
 
@@ -83,3 +86,14 @@ function OpenLevel(level){
     currentLevel.start();
 }
 
+export function getGameObjects(){
+    return levelData.getGameObjects();
+}
+
+export function addGameObject(gameObject){
+    if (gameObject instanceof GameObject) {
+        levelData.gameObjects.push(gameObject)
+    } else {
+        console.error("Invalid game object passed to addGameObject");
+    }
+}
